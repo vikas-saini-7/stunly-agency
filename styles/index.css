@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  input[type="checkbox"]:checked ~ label span svg {
+    @apply inline-flex;
+  }
+
+  .sticky .header-logo {
+    @apply py-5 lg:py-2;
+  }
+
+  .sticky .menu-scroll.active {
+    @apply opacity-70;
+  }
+
+  input#togglePlan:checked ~ .dot {
+    @apply translate-x-full;
+  }
+
+  input#checkboxLabel:checked ~ .box span {
+    @apply opacity-100;
+  }
+}
+
+.portfolio-gallery{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+.portfolio-gallery .item{
+  background-color: rgba(255, 255, 255, 0.05);
+  position: relative;
+  transition: 0.3s ;
+  width: 100%;
+  height: 500px;
+
+}
+.portfolio-gallery .item .img{
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease-in-out all;
+
+}
+.portfolio-gallery .item .img:hover{
+  opacity: 0.7;
+
+}
+
+.portfolio-gallery .item .layer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  transition: 0.3s ;
+}
+
+/* .portfolio-gallery .item .img:hover +  .layer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+
+.services{}
+.services .item{
+  background-color: rgba(255, 254, 254, 0.05);
+}
+
+.portfolio-page{}
+.portfolio-page .item{
+  background-color: rgba(0, 13, 255, 0.03);
+  margin-bottom: 32px;
+  border-radius: 4px;
+}
+
+
+.alert{
+  position: fixed;
+  right: 3%;
+  bottom: 50px;
+  background-color: rgb(14, 16, 37);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* color: rgb(0, 195, 0); */
+  border-bottom: 4px solid #00cb00;
+  border-bottom-width: 4px;
+  border-style: solid;
+  z-index: 1000;
+  animation: alert 1.5s ease-in-out;
+}
+.alert svg{
+  color: white;
+  /* opacity: 0.6; */
+}
+.close {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 53.7 53.7'><path opacity='1' fill='white' d='M35.6 34.4L28 26.8l7.6-7.6c.2-.2.2-.5 0-.7l-.5-.5c-.2-.2-.5-.2-.7 0l-7.6 7.6-7.5-7.6c-.2-.2-.5-.2-.7 0l-.6.6c-.2.2-.2.5 0 .7l7.6 7.6-7.6 7.5c-.2.2-.2.5 0 .7l.5.5c.2.2.5.2.7 0l7.6-7.6 7.6 7.6c.2.2.5.2.7 0l.5-.5c.2-.2.2-.5 0-.7z'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  /* padding-left: 5px; */
+  width: 40px;
+  height: 40px;
+}
+@keyframes alert {
+  0% {
+    right: -100%;
+  }
+  50% {
+    right: 4%;
+  }
+  60% {
+    right: 2%;
+  }
+  70% {
+    right: 3.5%;
+  }
+  80% {
+    right: 2.25%;
+  }
+  90% {
+    right: 3%;
+  }
+  100% {
+    right: 3%;
+  }
+}
+/* loader  */
+.loading-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 1;
+}
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 4px solid #FFF;
+  border-bottom-color: #ff003c;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+/* ######################
+NOTE This Code used for 
+1. Hire us page
+2. Carrers Page
+3. Contact Us Page
+###################### */
+
+.hire-us-page{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+.hire-us-page .item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+.hire-us-page .item .left{
+  flex: 2;
+}
+.hire-us-page .item .left h2{
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.hire-us-page .item .left p{}
+.hire-us-page .item .left button{}
+.hire-us-page .item .right{
+  flex: 1;
+}
+.hire-us-page .item .right img{
+  width: 50%;
+  margin: 0 auto;
+}
+/* hire-section */
+#hire-section{
+  background-color: rgba(0, 4, 255, 0.05);
+}
+.hire-section{
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  text-align: center;
+  /* background-color: rgba(255, 255, 255, 0.108); */
+}
+.hire-section button{
+  width: fit-content;
+}
+.hire-section h2{}
+.hire-section p{
+}
+
+@media (max-width: 1040px){
+  .portfolio-gallery{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 800px){
+  
+.portfolio-gallery{
+  grid-template-columns: 1fr;
+}
+.hire-us-page{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+.hire-us-page .item{
+  flex-direction: column-reverse;
+  text-align: center;
+}
+.hire-us-page .item .right img{
+  width: 30%;
+  /* margin: 0; */
+  margin-bottom: 16px;
+}
+
+.portfolio-gallery .item{
+  height: auto;
+  min-height: 400px;
+}
+.portfolio-gallery .item .img{
+  object-fit: contain;
+  height: auto;
+}
+}
+
+  /* Animated button styling */
+  .animated-button {
+    /* display: inline-block; */
+    /* padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; */
+    animation: bounce 15s ease infinite;
+    /* background-color: #ff5500; */
+}
+
+/* Animation on hover */
+.animated-button:hover {
+    animation: none;
+}
+.fast-animation{
+  animation: bounce 1s ease infinite;
+}
+
+/* Keyframes for the animation */
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+}
+25% {
+    transform: translateX(-3px);
+}
+50% {
+    transform: translateX(3px);
+    background-color: #ff0080;
+}
+75% {
+    transform: translateX(-3px);
+}
+100% {
+    transform: translateX(0px);
+}
+}
+
+
+
+/* Privacy Policy */
+.privacy-policy{
+  /* margin-top: 5%; */
+}
+.privacy-policy section{
+  margin: 3.5% 0;
+  max-width: 950px;
+}
+.privacy-policy section h2{
+  font-size: 2rem;
+}
+
+.privacy-policy section p{
+  opacity: 0.75;
+}
+
+/* tos  */
+.tos{
+  margin-bottom: 48px;
+  margin: 3.5% 0;
+  max-width: 950px;
+
+}
+
+.tos h1{
+  font-size: 2rem;
+  margin: 5.5% 0 0 0;
+}
+.tos h2{
+  font-size: 1.5rem;
+  margin: 2.5% 0 0 0;
+}
+.tos p{
+  opacity: 0.75;
+}
+.tos a{
+  color: #ff006f;
+}
